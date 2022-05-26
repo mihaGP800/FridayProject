@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const EnterNewPassword = () => {
+export const SetNewPassword = () => {
     return (
         <div>
-            EnterNewPassword
+            SetNewPassword
         </div>
     );
 }

@@ -1,21 +1,24 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import {Login} from '../common/Login';
 import HW4 from '../common/SuperComponents/HW4';
 import {Register} from '../common/Register';
 import {Profile} from '../common/Profile';
-import {Error404} from '../common/Error404';
-import {EnterNewPassword} from '../common/EnterNewPassword';
+import {Error404} from '../common/Error404/Error404';
+import {SetNewPassword} from '../common/SetNewPassword';
 import {PasswordRecovery} from '../common/PasswordRecovery';
 
 export enum PATH {
     login = '/login',
     register = '/register',
     profile = '/profile',
-    error404 = '/*',
+    error404 = '/404',
     passwordRecovery = '/passwordRecovery',
-    enterNewPassword = '/enterNewPassword',
-    hw4 = '/hw4',
+    setNewPassword = '/setNewPassword',
+    superComponents = '/superComponents',
+    someUrl = '/*',
+    emptyUrl = '/'
+
 }
 
 
@@ -25,10 +28,13 @@ export const Nav = () => {
             <Route path={PATH.login} element={<Login/>}/>
             <Route path={PATH.register} element={<Register/>}/>
             <Route path={PATH.profile} element={<Profile/>}/>
-            <Route path={PATH.error404} element={<Error404/>}/>
             <Route path={PATH.passwordRecovery} element={<PasswordRecovery/>}/>
-            <Route path={PATH.enterNewPassword} element={<EnterNewPassword/>}/>
-            <Route path={PATH.hw4} element={<HW4/>}/>
+            <Route path={PATH.setNewPassword} element={<SetNewPassword/>}/>
+            <Route path={PATH.error404} element={<Error404/>}/>
+            <Route path={PATH.superComponents} element={<HW4/>}/>
+
+            <Route path={PATH.someUrl} element={<Navigate to={PATH.error404}/>}/>
+            <Route path={PATH.emptyUrl} element={<Navigate to={PATH.profile}/>}/>
         </Routes>
     );
 }

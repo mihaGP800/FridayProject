@@ -1,0 +1,7 @@
+.image {
+    height: 100vh;
+    max-width: 100vw;
+    background-image: url(custom-404-error-page.png);
+    background-size: cover;
+    background-position: center;
+}

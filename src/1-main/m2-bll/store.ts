@@ -1,6 +1,10 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux';
 import thunk, {ThunkAction} from 'redux-thunk';
-import {ProfileActionsType, profileReducer} from './profileReduser';
+import {ProfileActionsType, profileReducer} from './profileReducer';
+import {LoginActionsType} from './loginReducer';
+import {RegisterActionsType} from './registerReducer';
+import {PasswordRecoveryActionsType} from './passwordRecoveryReducer';
+import {SetNewPasswordActionsType} from './setNewPasswordReducer';
 
 
 const rootReducer = combineReducers({
@@ -10,10 +14,14 @@ const rootReducer = combineReducers({
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
 //all types actions for app
-export type AppActionsType = ProfileActionsType | any
+export type ProjectActionsType = ProfileActionsType
+    | LoginActionsType
+    | RegisterActionsType
+    | PasswordRecoveryActionsType
+    | SetNewPasswordActionsType
 
 //AppThunk type
 export type AppThunk<ReturnType = void> =
-    ThunkAction<ReturnType, AppRootStateType, unknown, AppActionsType>
+    ThunkAction<ReturnType, AppRootStateType, unknown, ProjectActionsType>
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))

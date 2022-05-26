@@ -10,10 +10,10 @@ export const Header = () => {
             <NavLink to={PATH.login} className={classNameLink}>login</NavLink>
             <NavLink to={PATH.register} className={classNameLink}>register</NavLink>
             <NavLink to={PATH.profile} className={classNameLink}>profile</NavLink>
-            <NavLink to={PATH.error404} className={classNameLink}>error404</NavLink>
             <NavLink to={PATH.passwordRecovery} className={classNameLink}>passwordRecovery</NavLink>
-            <NavLink to={PATH.enterNewPassword} className={classNameLink}>enterNewPassword</NavLink>
-            <NavLink to={PATH.hw4} className={classNameLink}>hw4</NavLink>
+            <NavLink to={PATH.setNewPassword} className={classNameLink}>setNewPassword</NavLink>
+            <NavLink to={PATH.error404} className={classNameLink}>error404</NavLink>
+            <NavLink to={PATH.superComponents} className={classNameLink}>superComponents</NavLink>
         </div>
     );
 }
