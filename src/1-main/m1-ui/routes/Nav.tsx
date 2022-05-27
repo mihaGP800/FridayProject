@@ -17,7 +17,8 @@ export enum PATH {
     setNewPassword = '/setNewPassword',
     superComponents = '/superComponents',
     someUrl = '/*',
-    emptyUrl = '/'
+    fridayProject = '/FridayProject',
+
 
 }
 
@@ -34,7 +35,7 @@ export const Nav = () => {
             <Route path={PATH.superComponents} element={<HW4/>}/>
 
             <Route path={PATH.someUrl} element={<Navigate to={PATH.error404}/>}/>
-            <Route path={PATH.emptyUrl} element={<Navigate to={PATH.profile}/>}/>
+            <Route path={PATH.fridayProject} element={<Navigate to={PATH.profile}/>}/>
         </Routes>
     );
 }
